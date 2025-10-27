@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, Carmen 💕</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(135deg, #ffe6f2, #d6f0ff);
+      color: #333;
+      overflow-x: hidden;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #ff69b4;
+      margin-top: 40px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .photos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 40px auto;
+      gap: 20px;
+    }
+
+    .photos img {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .photos img:hover {
+      transform: scale(1.05);
+    }
+
+    .message {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.2em;
+      line-height: 1.6em;
+      background: rgba(255,255,255,0.7);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255,182,193,0.5);
+    }
+
+    .surprise-btn {
+      margin-top: 40px;
+      background-color: #ff69b4;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .surprise-btn:hover {
+      background-color: #ff85c1;
+      transform: scale(1.05);
+    }
+
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background-color: pink;
+      top: -10px;
+      animation: fall 4s linear infinite;
+      border-radius: 50%;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(100vh); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Happy Birthday, Carmen 💕</h1>
+
+  <div class="photos">
+    <img src="z7161750512206_688552bd916975c1efc40cc18536c923.jpg" alt="Carmen Photo 1">
+    <img src="z7161750512525_f84d6ff1fa9415c54187e8735437df46.jpg" alt="Carmen Photo 2">
+    <img src="z7161766410912_86fee2bee0b9c9e584779987812d1813.jpg" alt="Carmen Photo 3">
+  </div>
+
+  <div class="message">
+    <p>It’s the fifth birthday I get to celebrate with my baby, and I still love you just as much as the day we first met. You’ll never know how much I want to be by your side every single moment, and I’ll keep trying every day to make sure I can be with you even more in the future. 💖</p>
+  </div>
+
+  <button class="surprise-btn" onclick="showHearts()">💝 Click for a Surprise 💝</button>
+
+  <audio autoplay loop>
+    <source src="https://www.youtube.com/embed/K-a8s8OLBSE" type="audio/mpeg">
+    Your browser does not support audio.
+  </audio>
+
+  <script>
+    function createConfetti() {
+      const confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 80%)`;
+      confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+      document.body.appendChild(confetti);
+      setTimeout(() => confetti.remove(), 5000);
+    }
+    setInterval(createConfetti, 300);
+
+    function showHearts() {
+      for (let i = 0; i < 30; i++) {
+        const heart = document.createElement('div');
+        heart.textContent = '💖';
+        heart.style.position = 'fixed';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.top = Math.random() * 100 + 'vh';
+        heart.style.fontSize = Math.random() * 30 + 20 + 'px';
+        heart.style.animation = 'float 3s ease-in-out infinite';
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 3000);
+      }
+    }
+  </script>
+</body>
+</html>
